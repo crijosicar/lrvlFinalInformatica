@@ -32,11 +32,11 @@ class CustomerController extends Controller
             'lugarExpedicion' => 'required',
         ], $messages);
 
-        if ($validator->fails()) {
-            return redirect('/')
+      if ($validator->fails()){
+         return redirect('/')
                         ->withErrors($validator)
                         ->withInput();
-        }
+      }
 
       $citizenRegister = new CitizenRegister();
       $citizenRegister->cedula = $request->input('cedula');
